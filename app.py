@@ -27,6 +27,7 @@ from numpy.linalg import norm
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('punkt')
+nltk.download('omw-1.4')
 
 # Importing datasets
 df = pd.read_csv('https://drive.google.com/u/0/uc?id=1R1w1K9gzfMKyDjG9SpoTu0KsC48Q1XP5&export=download')
@@ -92,7 +93,7 @@ def preprocessing_input(query):
 
 # Load pre-trained word embedding models
 skipgram = Word2Vec.load('skipgramx11.bin')
-FastText = Word2Vec.load('FastText.bin')
+FastText = Word2Vec.load('fasttext.bin')
 
 # Define vector size for each word
 vector_size = 100
@@ -109,7 +110,7 @@ def get_mean_vector(word2vec_model, words):
 K = pd.read_csv('skipgram-vec.csv')
 K2 = [K[str(i)].values for i in range(df.shape[0])]
 
-KK = pd.read_csv('FastText-vec.csv')
+KK = pd.read_csv('fasttext-vec.csv')
 K1 = [KK[str(i)].values for i in range(df.shape[0])]
 
 # Function to calculate cosine similarity
