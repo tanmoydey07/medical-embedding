@@ -1,0 +1,10 @@
+nltk
+gensim
+numpy
+wordcloud
+dropbox
+pandas
+streamlit
+scikit-learn
+matplotlib
+plotly
